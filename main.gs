@@ -1,6 +1,21 @@
 // スクリプトのプロパティから環境変数を取得
 var prop = PropertiesService.getScriptProperties().getProperties();
 
+/*
+スクリプトのプロパティの内容
+prop.LINE_TOKEN     :LINEBotのトークン
+prop.GROUP_ID       :LINEグループのid 
+prop.SERVER_ID      :Discordサーバーのid
+prop.TEXT_ID        :Discordサーバーのテキストチャンネルid
+prop.RAILWAY_URL    :railwayで稼働させてるDiscordBotのURL
+prop.NG_CHANNEL     :LINE側に送りたくないDiscordのテキストチャンネル名(カンマ区切り)
+prop.SPREAD_ID      :Google Spread Sheetのid
+prop.ANGRY_WEBHOOK  :1日の上限に達した場合警告するDiscordのWebhookのURL
+prop.SIGNAL_WEBHOOK :日付が変更された場合にプッシュ状況を通知するDiscordのWebhookのURL
+prop.TEST_WEBHOOK   :テスト用のDiscordのWebhookのURL
+prop.GYAZO_TOKEN    :画像保存サービスGyazoのAPIを扱うためのトークン
+*/
+
 // Messaging APIのチャネルアクセストークン
 var CHANNEL_ACCESS_TOKEN = prop.LINE_TOKEN
 
