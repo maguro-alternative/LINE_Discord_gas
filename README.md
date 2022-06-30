@@ -57,7 +57,7 @@ Google Apps Scriptを使用しています。また、以下のAPIを使用し�
 |[Gyazoトークン](https://gyazo.com/api/docs)|[LINE Developers](https://developers.line.biz/console/?status=success)|[Discord Webhook](https://discord.com/developers/docs/resources/webhook)|
 |[参考(アーカイブ)](https://web.archive.org/web/20170724151212/http://yoshiyuki-hirano.hatenablog.jp/entry/2015/09/18/153155)|[参考](https://qiita.com/taka777n/items/c601421b871fd2b6a55f)|[参考](https://qiita.com/iroha71/items/b2a473898d6c9b4b4ae7)|
 # プロパティ内容
-
+環境変数のようなものです。事前に控えておく必要があります。
 ```bash
 スクリプトのプロパティの内容
 prop.LINE_TOKEN     :LINEBotのトークン
@@ -72,3 +72,14 @@ prop.SIGNAL_WEBHOOK :日付が変更された場合にプッシュ状況を通�
 prop.TEST_WEBHOOK   :テスト用のDiscordのWebhookのURL
 prop.GYAZO_TOKEN    :画像保存サービスGyazoのAPIを扱うためのトークン
 ```
+- LINEのグループidは、送信されたメッセージからしか確認できません。  
+取得方法について、いくつかの参考リンクを載せます。[参考リンク1](https://blog.taka73.net/2020/12/23/line-messaging-api-line-bot/) [参考リンク2](https://qiita.com/i_tatte/items/6cd8d9ce0a93df249937#l-bot%E3%82%92%E8%B5%B7%E5%8B%95%E3%81%99%E3%82%8B)  
+- Discordのサーバーidは、DiscordBot側が複数のサーバーで使用される場合は必須です。  
+設定しない場合、複数のサーバーのメッセージがLINEに送信されてしまいます。
+- DiscordのテキストチャンネルidはLINEのメッセージを送信するところを指定しています。  
+- railwayはherokuでも問題ありません。
+- NG_CHANNELはカンマ区切りでテキストチャンネル名を指定してください。  
+例:NG_CHANNEL=入室ログ,運営関連,コマンド入力  
+テキストチャンネルの入室ログ、運営関連、コマンド入力のメッセージがLINE側に送信されなくなります。
+- スプレッドシートのidはURLの```spreadsheets/d/この部分/edit```になります。
+- GyazoのトークンはLINE側がDiscordに画像を送信する際に使用します。
